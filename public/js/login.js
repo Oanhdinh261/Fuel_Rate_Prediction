@@ -20,6 +20,8 @@ loginForm.addEventListener("submit", (event) => {
         body: JSON.stringify(login),
         headers: {
             "Content-Type": "application/json",
+        credentials: 'include'
+        
         },
     })
         .then((res) => res.json())
@@ -29,7 +31,7 @@ loginForm.addEventListener("submit", (event) => {
                 loginMessage.textContent = "Login successful!";
                 loginMessage.style.color = "green";
                 // You can redirect to another page on success if needed
-                // window.location.href = "/dashboard";
+                 window.location.href = "/profile";
             } else {
                 // Login failed, display an error message
                 loginMessage.textContent = data.error || "Login failed.";

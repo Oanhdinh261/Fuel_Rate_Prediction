@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quote History</title>
+    <link rel="stylesheet" href="/css/history.css"> <!-- Link your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Your Quote History</h1>
+        <table id="quoteHistoryTable">
+            <thead>
+                <tr>
+                    <th>Gallons Requested</th>
+                    <th>Delivery Address</th>
+                    <th>Delivery Date</th>
+                    <th>Suggested Price</th>
+                    <th>Total Amount</th>
+                    <!-- More columns as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                <% quotes.forEach(quote => { %>
+                    <tr>
+                        <td><%= quote.gallonsRequested %></td>
+                        <td><%= quote.deliveryAddress %></td>
+                        <td><%= quote.deliveryDate %></td>
+                        <td><%= quote.suggestedPrice %></td>
+                        <td><%= quote.totalAmount %></td>
+                        <!-- More columns as needed -->
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
